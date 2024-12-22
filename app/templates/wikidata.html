@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retrieve Wikidata</title>
+</head>
+<body>
+    <h1>Résultat de l'API Wikidata pour {{ id }}</h1>
+
+    {% if status_code and content_type %}
+        <h2>Informations sur la requête</h2>
+        <p><strong>Code HTTP:</strong> {{ status_code }}</p>
+        <p><strong>Type de contenu:</strong> {{ content_type }}</p>
+    {% endif %}
+
+    {% if entity_data %}
+        <h2>Données de l'entité</h2>
+        <pre>{{ entity_data | tojson(indent=2) }}</pre>
+    {% else %}
+        <h2>Erreur</h2>
+        <p style="color: red;"><strong>{{ error_message }} </strong> </p>
+    {% endif %}
+</body>
+</html>
