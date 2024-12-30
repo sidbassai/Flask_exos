@@ -1,3 +1,5 @@
+#ne fais pas attention à ça j'avais essayé d'appeler ce ficher dans app.py mais ça ne marchait pas
+'''
 from ..app import app
 from flask import Flask, request, render_template, jsonify
 import requests 
@@ -57,4 +59,4 @@ def retrieve_wikidata(id):
             error_message=f"Erreur lors de la requête : {str(e)}"
         )
 
-
+'''
